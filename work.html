@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: red;
+            border-radius: 8px;
+            padding: 5px 15px;
+        }
+        button:hover{
+            background-color: chartreuse;
+        }
+        a:link{
+            color: green;
+            text-decoration-color: red;
+        }
+        *:disabled {
+            background-color: dimgray;
+            color: black;
+            opacity: 1;
+        }
+        input:optional{
+            background-color: aliceblue;
+        }
+        label {
+            display: block;
+            margin-top: 1em;
+        }
+
+ input:invalid {
+  background-color: ivory;
+  border: none;
+  outline: 2px solid red;
+  border-radius: 5px;
+}
+
+p:target {
+  background-color: gold;
+}
+
+p:target::before {
+  font: 70% sans-serif;
+  content: "►";
+  color: limegreen;
+  margin-right: 0.25em;
+}
+
+p:target i {
+  color: red;
+}
+label,
+input[type="submit"] {
+  display: block;
+  margin-top: 1em;
+}
+
+input:checked {
+  border: none;
+  outline: 2px solid deeppink;
+}
+
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+.req {
+  color: red;
+}
+
+*:required {
+  background-color: gold;
+}
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+input:in-range {
+  background-color: palegreen;
+}
+p {
+  font-weight: bold;
+}
+
+li:first-child {
+  border: 2px solid orange;
+}
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+*:enabled {
+  background-color: gold;
+}
+label,
+input[type="submit"] {
+  display: block;
+  margin-top: 1em;
+}
+
+input:default {
+  border: none;
+  outline: 2px solid deeppink;
+}
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+input:valid {
+  background-color: ivory;
+  border: none;
+  outline: 2px solid deepskyblue;
+  border-radius: 5px;
+  accent-color: gold;
+}
+label {
+  display: block;
+  margin-top: 1em;
+}
+
+input:out-of-range {
+  background-color: orangered;
+}
+p {
+  font-weight: bold;
+}
+
+li:nth-child(-n + 3) {
+  border: 2px solid orange;
+  margin-bottom: 1px;
+}
+
+li:nth-child(even) {
+  background-color: lightyellow;
+}
+p {
+  font-weight: bold;
+}
+
+li:last-child {
+  border: 2px solid orange;
+}
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 3px;
+}
+
+dd:nth-of-type(even) {
+  border: 2px solid orange;
+}
+a:only-of-type {
+  color: fuchsia;
+}
+
+dd:only-of-type {
+  background-color: bisque;
+}
+div:empty {
+  outline: 2px solid deeppink;
+  height: 1em;
+}
+
+
+    </style>
+</head>
+<body>
+    <button class="button" type="buttpn">submit</button>
+    <div>
+        <p><b>page that you might the visited :</b></p>
+        <ul>
+            <li><a href="https://developer.mozilla.org">MDN Web Docs</a></li>
+            <li><a href="https://www.youtube.com/">YouTube</a></li>
+        </ul>
+    </div>
+    <div>
+         <form>
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text" />
+
+  <label for="emp">Employed:</label>
+  <select id="emp" name="emp" disabled>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <label for="empDate">Employment Date:</label>
+  <input id="empDate" name="empDate" type="date" disabled />
+
+  <label for="resume">Resume:</label>
+  <input id="resume" name="resume" type="file" />
+</form>
+    </div>
+    <div>
+        <form>
+  <label for="email">Email Address:</label>
+  <input id="email" name="email" type="email" value="na@me@example.com" />
+
+  <label for="secret">Secret Code: (lower case letters)</label>
+  <input id="secret" name="secret" type="text" value="test" pattern="[a-z]+" />
+
+  <label for="age">Your age: (18+)</label>
+  <input id="age" name="age" type="number" value="5" min="18" />
+
+  <label
+    ><input name="tos" type="checkbox" required checked /> - Do you agree to
+    ToS?</label
+  >
+</form>
+    </div>
+    <div>
+        <h3>Table of Contents</h3>
+<ol>
+  <li><a href="#p1">Jump to the first paragraph!</a></li>
+  <li><a href="#p2">Jump to the second paragraph!</a></li>
+  <li>
+    <a href="#nowhere">
+      This link goes nowhere, because the target doesn't exist.
+    </a>
+  </li>
+</ol>
+
+<h3>My Fun Article</h3>
+<p id="p1">
+  You can target <i>this paragraph</i> using a URL fragment. Click on the first
+  link above to try out!
+</p>
+<p id="p2">
+  This is <i>another paragraph</i>, also accessible from the second link above.
+  Isn't that delightful?
+</p>
+
+    </div>
+    <div>
+        <form>
+  <p>How did you find out about us?</p>
+  <label
+    ><input name="origin" type="radio" value="google" checked /> Google</label
+  >
+  <label><input name="origin" type="radio" value="facebook" /> Facebook</label>
+  <p>Please agree to our terms:</p>
+
+  <label
+    ><input name="newsletter" type="checkbox" checked /> I want to subscribe to
+    a personalized newsletter.</label
+  >
+
+  <label
+    ><input name="privacy" type="checkbox" /> I have read and I agree to the
+    Privacy Policy.</label
+  >
+
+  <input type="submit" value="Submit form" />
+</form>
+
+    </div>
+    <div>
+        <form>
+  <label for="name">Name: <span class="req">*</span></label>
+  <input id="name" name="name" type="text" required />
+
+  <label for="birth">Date of Birth:</label>
+  <input id="birth" name="birth" type="date" />
+
+  <label for="origin"
+    >How did you find out about us? <span class="req">*</span></label
+  >
+  <select id="origin" name="origin" required>
+    <option>Google</option>
+    <option>Facebook</option>
+    <option>Advertisement</option>
+  </select>
+  <p><span class="req">*</span> - Required field</p>
+</form>
+
+    </div>
+    <div>
+        <form>
+  <label for="amount">How many tickets? (You can buy 2-6 tickets)</label>
+  <input id="amount" name="amount" type="number" min="2" max="6" value="4" />
+
+  <label for="dep">Departure Date: (Whole year 2022 is acceptable)</label>
+  <input
+    id="dep"
+    name="dep"
+    type="date"
+    min="2022-01-01"
+    max="2022-12-31"
+    value="2025-05-05" />
+
+  <label for="ret">Return Date: (Whole year 2022 is acceptable)</label>
+  <input id="ret" name="ret" type="date" min="2022-01-01" max="2022-12-31" />
+</form>
+
+    </div>
+    <div>
+
+    </div>
+<p>Track &amp; field champions:</p>
+<ul>
+  <li>Adhemar da Silva</li>
+  <li>Wang Junxia</li>
+  <li>Wilma Rudolph</li>
+  <li>Babe Didrikson-Zaharias</li>
+  <li>Betty Cuthbert</li>
+  <li>Fanny Blankers-Koen</li>
+  <li>Florence Griffith-Joyner</li>
+  <li>Irena Szewinska</li>
+  <li>Jackie Joyner-Kersee</li>
+  <li>Shirley Strickland</li>
+  <li>Carl Lewis</li>
+  <li>Emil Zatopek</li>
+  <li>Haile Gebrselassie</li>
+  <li>Jesse Owens</li>
+  <li>Jim Thorpe</li>
+  <li>Paavo Nurmi</li>
+  <li>Sergei Bubka</li>
+  <li>Usain Bolt</li>
+</ul>
+<div>
+    <form>
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text" />
+
+  <label for="emp">Employed:</label>
+  <select id="emp" name="emp" disabled>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <label for="empDate">Employment Date:</label>
+  <input id="empDate" name="empDate" type="date" disabled />
+
+  <label for="resume">Resume:</label>
+  <input id="resume" name="resume" type="file" />
+</form>
+
+</div>
+<div>
+    <form>
+  <p>How did you find out about us?</p>
+  <label
+    ><input name="origin" type="radio" value="google" checked /> Google</label
+  >
+  <label><input name="origin" type="radio" value="facebook" /> Facebook</label>
+  <p>Please agree to our terms:</p>
+
+  <label
+    ><input name="newsletter" type="checkbox" checked /> I want to subscribe to
+    a personalized newsletter.</label
+  >
+
+  <label
+    ><input name="privacy" type="checkbox" /> I have read and I agree to the
+    Privacy Policy.</label
+  >
+
+  <input type="submit" value="Submit form" />
+</form>
+
+</div>
+<div>
+    <form>
+  <label for="email">Email Address:</label>
+  <input id="email" name="email" type="email" value="na@me@example.com" />
+
+  <label for="secret">Secret Code: (lower case letters)</label>
+  <input id="secret" name="secret" type="text" value="test" pattern="[a-z]+" />
+
+  <label for="age">Your age: (18+)</label>
+  <input id="age" name="age" type="number" value="5" min="18" />
+
+  <label
+    ><input name="tos" type="checkbox" required checked /> - Do you agree to
+    ToS?</label
+  >
+</form>
+
+</div>
+<div>
+    <form>
+  <label for="amount">How many tickets? (You can buy 2-6 tickets)</label>
+  <input id="amount" name="amount" type="number" min="2" max="6" value="4" />
+
+  <label for="dep">Departure Date: (Whole year 2022 is acceptable)</label>
+  <input
+    id="dep"
+    name="dep"
+    type="date"
+    min="2022-01-01"
+    max="2022-12-31"
+    value="2025-05-05" />
+
+  <label for="ret">Return Date: (Whole year 2022 is acceptable)</label>
+  <input id="ret" name="ret" type="date" min="2022-01-01" max="2022-12-31" />
+</form>
+
+</div>
+<div>
+<dl>
+  <dt>Vegetables:</dt>
+  <dd>1. Tomatoes</dd>
+  <dd>2. Cucumbers</dd>
+  <dd>3. Mushrooms</dd>
+  <dt>Fruits:</dt>
+  <dd>4. Apples</dd>
+  <dd>5. Mangos</dd>
+  <dd>6. Pears</dd>
+  <dd>7. Oranges</dd>
+</dl>
+</div>
+<p>
+  To find out more about <b>QUIC</b>, check <a href="#">RFC 9000</a> and
+  <a href="#">RFC 9114</a>.
+</p>
+
+<dl>
+  <dt>Published</dt>
+  <dd>2021</dd>
+  <dd>2022</dd>
+</dl>
+
+<p>Details about <b>QPACK</b> can be found in <a href="#">RFC 9204</a>.</p>
+
+<dl>
+  <dt>Published</dt>
+  <dd>2022</dd>
+</dl>
+<div>
+    <p>Element with no content:</p>
+<div></div>
+
+<p>Element with comment:</p>
+<div><!-- A comment --></div>
+
+<p>Element with nested empty element:</p>
+<div><p></p></div>
+
+</div>
+</body>
+</html>
